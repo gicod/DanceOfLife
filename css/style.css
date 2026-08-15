@@ -120,17 +120,15 @@ section{padding:96px 0}
 .sched-note a{color:var(--pink-bright);font-weight:600;border-bottom:1px solid rgba(255,79,216,.4)}
 
 /* ============ ГАЛЕРЕЯ ============ */
-.gallery-grid{display:grid;grid-template-columns:repeat(3,1fr);grid-auto-rows:240px;gap:24px}
-.tile{position:relative;border-radius:14px;overflow:hidden;border:1px solid var(--line);background:#140d1b}
-.tile .art{position:absolute;inset:0;width:100%;height:100%;transition:transform .6s ease}
-.tile:hover .art{transform:scale(1.05)}
-.t4,.t5{grid-row:span 2}
-.t1{background:radial-gradient(120% 90% at 50% 100%,rgba(255,46,166,.28),transparent 60%),linear-gradient(180deg,#1a0f20,#0e0813)}
-.t2{background:linear-gradient(180deg,#1c1126,#120a18)}
-.t3{background:radial-gradient(80% 70% at 50% 45%,rgba(168,85,247,.35),transparent 70%),#0d0813}
-.t4{background:radial-gradient(90% 90% at 35% 40%,rgba(255,46,166,.4),rgba(23,10,25,.1) 75%),#170a1c}
-.t5{background:linear-gradient(180deg,#181022,#100a16)}
-.t6{background:radial-gradient(100% 80% at 50% 100%,rgba(255,46,166,.3),transparent 60%),radial-gradient(80% 60% at 50% 30%,rgba(139,92,246,.22),transparent 70%),#120a18}
+.gallery-photos{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-bottom:24px}
+.g-photo{position:relative;aspect-ratio:4/3;border-radius:14px;overflow:hidden;border:1px solid var(--line);background:radial-gradient(120% 90% at 50% 100%,rgba(255,46,166,.22),transparent 60%),#140d1b}
+.g-photo img{width:100%;height:100%;object-fit:cover;transition:transform .6s ease}
+.g-photo:hover img{transform:scale(1.05)}
+.gallery-videos{display:grid;grid-template-columns:repeat(2,1fr);gap:24px}
+.g-video{width:100%;aspect-ratio:16/9;object-fit:cover;display:block;background:#000;border-radius:14px;border:1px solid var(--line);box-shadow:0 12px 40px rgba(0,0,0,.45)}
+@media (max-width:768px){
+  .gallery-photos,.gallery-videos{grid-template-columns:1fr}
+}
 
 /* ============ ОТЗЫВЫ ============ */
 .reviews{background:radial-gradient(60% 60% at 50% 45%,rgba(139,92,246,.08),transparent 75%)}
@@ -198,7 +196,7 @@ section{padding:96px 0}
 /* ============ АДАПТИВ ============ */
 @media (max-width:1024px){
   .cards{grid-template-columns:repeat(2,1fr)}
-  .gallery-grid{grid-template-columns:repeat(2,1fr);grid-auto-rows:220px}
+  /* .gallery-grid{grid-template-columns:repeat(2,1fr);grid-auto-rows:220px} */
   .contact-grid{grid-template-columns:1fr;gap:48px}
 }
 @media (max-width:768px){
@@ -212,7 +210,7 @@ section{padding:96px 0}
   .form-card{padding:30px 24px}
 }
 @media (max-width:620px){
-  .gallery-grid{grid-template-columns:1fr;grid-auto-rows:240px}
+  /* .gallery-grid{grid-template-columns:1fr;grid-auto-rows:240px} */
   .cards{grid-template-columns:1fr}
   .hero-actions .btn{width:100%}
 }
