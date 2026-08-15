@@ -4,14 +4,14 @@
 const CONTENT = {
 
   meta: {
-    title: 'Bachata Divine Studio — авторская школа парных танцев в Москве',
-    description: 'Чувственная бачата с нуля — без стресса, с живой атмосферой. Москва, ул. Большая Дмитровка, 7.',
+    title: 'Dance of Life',
+    description: 'Чувственная бачата с нуля — без стресса, с живой атмосферой. Москва, метро Лубянка, ул. Никольская, 25, ТЦ Наутилус',
   },
 
   brand: {
     // Логотип. Слово в <span class="glow"> светится неоном.
-    logo: 'Bachata <span class="glow">Divine</span> Studio',
-    name: 'Bachata Divine Studio',
+    logo: '<span class="glow">Dance of Life</span>',
+    name: 'Dance of Life',
   },
 
   nav: [
