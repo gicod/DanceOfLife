@@ -71,17 +71,25 @@
 <main id="top">
 
   <!-- ============ HERO ============ -->
+    <!-- ============ HERO ============ -->
   <section class="hero">
     <span class="spark"></span><span class="spark"></span><span class="spark"></span><span class="spark"></span><span class="spark"></span>
-    <div class="container hero-content">
-      <span class="sec-label" data-t="hero.label"></span>
-      <h1 data-t="hero.title"></h1>
-      <p data-t="hero.text"></p>
-      <div class="hero-actions">
-        <a href="#contact" class="btn btn-primary btn-lg" data-t="hero.primaryBtn"></a>
-        <a href="#schedule" class="btn btn-ghost btn-lg" data-t="hero.secondaryBtn"></a>
+    <div class="container hero-inner">
+      <!-- Текст слева -->
+      <div class="hero-text">
+        <span class="sec-label" data-t="hero.label"></span>
+        <h1 data-t="hero.title"></h1>
+        <p data-t="hero.text"></p>
+        <div class="hero-actions">
+          <a href="#contact" class="btn btn-primary btn-lg" data-t="hero.primaryBtn"></a>
+          <a href="#schedule" class="btn btn-ghost btn-lg" data-t="hero.secondaryBtn"></a>
+        </div>
+        <div class="hero-stats" id="heroStats"></div>
       </div>
-      <div class="hero-stats" id="heroStats"></div>
+      <!-- Горизонтальное фото справа -->
+      <figure class="hero-photo reveal">
+        <img src="img/hero.jpg" alt="Атмосфера Bachata Divine Studio" onerror="this.style.display='none'">
+      </figure>
     </div>
   </section>
 
