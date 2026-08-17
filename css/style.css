@@ -833,3 +833,11 @@ section {
     font-size: 1.05rem;
   }
 }
+
+.contact-socials {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 28px;
+}
