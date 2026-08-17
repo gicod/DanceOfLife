@@ -128,8 +128,6 @@ const CONTENT = {
     address: "Москва, м Лубянка, ул. Никольская 25, ТЦ Наутилус",
     phoneTitle: "Телефон",
     phone: "+7 (929) 553-10-37",
-    emailTitle: "Email",
-    email: "batayev.pasha@bk.ru",
     socialsTitle: "Мы в соцсетях",
     telegramBtn: "Телеграм",
     telegramUrl: "https://t.me/Bataevpav",
