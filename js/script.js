@@ -85,6 +85,25 @@
         .join(""),
     );
     render(
+      "#teachersList",
+      CONTENT.teachers.items
+        .map(
+          (t) => `
+          <div class="teacher-card reveal">
+            <div class="teacher-photo">
+              <img src="${t.photo}" alt="${t.name}" loading="lazy">
+            </div>
+            <div class="teacher-info">
+              <h3>${t.name}</h3>
+              <div class="role">${t.role}</div>
+              <p>${t.description}</p>
+            </div>
+          </div>
+        `
+        )
+        .join("")
+    );
+    render(
       "#contactSocials",
       `<a href="#" data-tg class="btn btn-telegram btn-sm">${ICONS.telegram}<span>${CONTENT.contact.telegramBtn}</span></a>
       <a href="#" data-instagram class="btn btn-telegram btn-sm">${ICONS.instagram}<span>${CONTENT.contact.instagramBtn}</span></a>
