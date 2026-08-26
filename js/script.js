@@ -67,24 +67,6 @@
         .join(""),
     );
     render(
-      "#schedList",
-      CONTENT.schedule.rows
-        .map(
-          (r) =>
-            `<div class="sched-row reveal"> <div class="sched-info"><h3>${r.title}</h3><span class="badge">${r.badge}</span></div> <div class="sched-when"><span class="days">${r.days}</span><span class="time">${r.time}</span></div> </div>`,
-        )
-        .join(""),
-    );
-    render(
-      "#sliderTrack",
-      CONTENT.reviews.items
-        .map(
-          (r) =>
-            `<article class="slide"> <div class="quote-mark">“</div> <blockquote>“${r.text}”</blockquote> <div class="author"><span class="avatar">${r.initials}</span><div><b>${r.name}</b><span>${r.meta}</span></div></div> </article>`,
-        )
-        .join(""),
-    );
-    render(
       "#teachersList",
       CONTENT.teachers.items
         .map(
@@ -102,6 +84,24 @@
         `
         )
         .join("")
+    );
+    render(
+      "#schedList",
+      CONTENT.schedule.rows
+        .map(
+          (r) =>
+            `<div class="sched-row reveal"> <div class="sched-info"><h3>${r.title}</h3><span class="badge">${r.badge}</span></div> <div class="sched-when"><span class="days">${r.days}</span><span class="time">${r.time}</span></div> </div>`,
+        )
+        .join(""),
+    );
+    render(
+      "#sliderTrack",
+      CONTENT.reviews.items
+        .map(
+          (r) =>
+            `<article class="slide"> <div class="quote-mark">“</div> <blockquote>“${r.text}”</blockquote> <div class="author"><span class="avatar">${r.initials}</span><div><b>${r.name}</b><span>${r.meta}</span></div></div> </article>`,
+        )
+        .join(""),
     );
     render(
       "#contactSocials",

@@ -16,8 +16,9 @@ const CONTENT = {
     { href: "#about", label: "О школе" },
     { href: "#teachers", label: "Преподаватели" },
     { href: "#schedule", label: "Расписание" },
+    { href: "#gallery", label: "Галерея" },    
     { href: "#reviews", label: "Отзывы" },
-    { href: "#contact", label: "Контакт" },
+    { href: "#contact", label: "Контакты" },
   ],
   navCta: "Записаться",
   mobileCta: "Записаться",
@@ -121,11 +122,11 @@ const CONTENT = {
     note: 'Не знаешь, какая группа подходит? <a href="#" data-tg>Напиши нам в Телеграм</a> — подскажем.',
   },
   gallery: {
-    label: "Фотографии",
+    label: "Галерея",
     title: "Атмосфера",
   },
   reviews: {
-    label: "Истории учеников",
+    label: "Отзывы",
     title: "Что говорят ученики",
     items: [
       {
