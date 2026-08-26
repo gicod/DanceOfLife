@@ -929,3 +929,63 @@ section {
     margin-bottom: 12px;
   }
 }
+
+/* ============ ПРАЙС ============ */
+.price-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 24px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.price-card {
+  background: linear-gradient(180deg, #171021, #120b18);
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  padding: 32px 24px;
+  text-align: center;
+  transition: 0.3s;
+  position: relative;
+  overflow: hidden;
+}
+
+.price-card:hover {
+  transform: translateY(-6px);
+  border-color: rgba(236, 72, 153, 0.4);
+  box-shadow: 0 14px 40px rgba(236, 72, 153, 0.12);
+}
+
+.price-card.featured {
+  border-color: var(--pink);
+  box-shadow: 0 0 20px rgba(236, 72, 153, 0.15);
+}
+
+.price-card h3 {
+  font-family: var(--serif);
+  font-size: 1.4rem;
+  margin-bottom: 8px;
+  color: #fff;
+}
+
+.price-desc {
+  color: var(--muted);
+  font-size: 0.9rem;
+  margin-bottom: 20px;
+  min-height: 40px; /* Чтобы карточки были одной высоты */
+}
+
+.price-val {
+  font-family: var(--serif);
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: var(--pink-bright);
+  text-shadow: 0 0 12px rgba(255, 79, 216, 0.4);
+  margin-bottom: 8px;
+}
+
+.price-sub {
+  font-size: 0.85rem;
+  color: var(--muted);
+  opacity: 0.8;
+}

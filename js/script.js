@@ -95,6 +95,21 @@
         .join(""),
     );
     render(
+      "#priceList",
+      CONTENT.price.items
+        .map(
+          (p) => `
+          <div class="price-card reveal ${p.highlight ? 'featured' : ''}">
+            <h3>${p.title}</h3>
+            <div class="price-desc">${p.desc}</div>
+            <div class="price-val">${p.price}</div>
+            <div class="price-sub">${p.sub}</div>
+          </div>
+        `
+        )
+        .join("")
+    );
+    render(
       "#sliderTrack",
       CONTENT.reviews.items
         .map(
