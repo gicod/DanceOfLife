@@ -11,7 +11,7 @@
       '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></svg>',
     pin: '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>',
     phone:
-      '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.1L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>',    
+      '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.1L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>',
     telegram:
       '<svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg>',
     instagram:
@@ -81,9 +81,9 @@
               <p>${t.description}</p>
             </div>
           </div>
-        `
+        `,
         )
-        .join("")
+        .join(""),
     );
     render(
       "#schedList",
@@ -99,15 +99,15 @@
       CONTENT.price.items
         .map(
           (p) => `
-          <div class="price-card reveal ${p.highlight ? 'featured' : ''}">
+          <div class="price-card reveal ${p.highlight ? "featured" : ""}">
             <h3>${p.title}</h3>
             <div class="price-desc">${p.desc}</div>
             <div class="price-val">${p.price}</div>
             <div class="price-sub">${p.sub}</div>
           </div>
-        `
+        `,
         )
-        .join("")
+        .join(""),
     );
     render(
       "#sliderTrack",
@@ -124,6 +124,24 @@
       <a href="#" data-instagram class="btn btn-telegram btn-sm">${ICONS.instagram}<span>${CONTENT.contact.instagramBtn}</span></a>
       <a href="#" data-vk class="btn btn-telegram btn-sm">${ICONS.vk}<span>${CONTENT.contact.vkBtn}</span></a>
       <a href="#" data-maps class="btn btn-telegram btn-sm">${ICONS.pin}<span>${CONTENT.contact.mapsBtn}</span></a>`,
+    );
+    render(
+      "#faqList",
+      CONTENT.faq.items
+        .map(
+          (item, index) => `
+        <div class="faq-item reveal">
+          <button class="faq-question" aria-expanded="false">
+            <span>${item.q}</span>
+            <svg class="faq-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+          </button>
+          <div class="faq-answer">
+            <p>${item.a}</p>
+          </div>
+        </div>
+      `,
+        )
+        .join(""),
     );
   }
 
@@ -246,6 +264,25 @@
     );
     document.querySelectorAll(".reveal").forEach((el) => io.observe(el));
   }
+  /* ========== 8. Аккордеон FAQ ========== */
+  document.addEventListener("click", (e) => {
+    const btn = e.target.closest(".faq-question");
+    if (!btn) return;
+
+    const item = btn.parentElement;
+    const isOpen = item.classList.contains("open");
+
+    // Закрываем все остальные (опционально, если хотите поведение "один открыт")
+    document.querySelectorAll(".faq-item.open").forEach((el) => {
+      el.classList.remove("open");
+      el.querySelector(".faq-question").setAttribute("aria-expanded", "false");
+    });
+
+    if (!isOpen) {
+      item.classList.add("open");
+      btn.setAttribute("aria-expanded", "true");
+    }
+  });
 
   /* ========== СТАРТ ========== */
   applyTexts();
